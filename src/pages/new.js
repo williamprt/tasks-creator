@@ -11,11 +11,20 @@ class New extends Component {
 
     handleSubmit = async e => {
         e.preventDefault();
-
-        const data = new FormData();
+        
+        let data = new FormData();
         data.append('task', this.state.task);
-        await api.post('tasks', data);
-        this.props.history.push('/');
+        data.append('info', this.state.info);
+        this.PostOnBackend(data);
+        this.ReturnToMainPage();
+    }
+
+    async PostOnBackend(data) {
+        return await api.post('tasks', data);
+    }
+        
+    ReturnToMainPage() {
+        return this.props.history.push('/')
     }
 
     handleChange = e => {
@@ -29,11 +38,20 @@ class New extends Component {
                     <input
                         type="text"
                         name="task"
-                        placeholder="aaaa"
+                        placeholder="New task"
                         onChange={this.handleChange}
                         value={this.state.task} 
+                        id="task"
                     />
-                    <button type="submit">aaaa</button>
+                    <input
+                        type="text"
+                        name="info"
+                        placeholder="Info"
+                        onChange={this.handleChange}
+                        value={this.state.info} 
+                        id="info"
+                    />
+                    <button type="submit">create</button>
                 </form>
             </div>
         )

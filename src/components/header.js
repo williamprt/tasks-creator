@@ -7,10 +7,10 @@ function Header() {
     return (
         <header id="header-box">
             <Link to="/">
-                <span>TaskCreator</span>
+                <button>TaskCreator</button>
             </Link>
             <Link to="/new">
-                <button type="checkbox">create new task</button>
+                <button>create new task</button>
             </Link>
         </header>        
     )

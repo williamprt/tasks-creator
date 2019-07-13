@@ -1,19 +1,29 @@
 div#main {
+    width: 100%;
+    max-width: 300px;
     padding-top: 35px;
+}
+form#main-box {
+    padding: 30px;
+    border: 1px solid grey;
+    border-radius: 3px;
     display: flex;
     flex-direction: column;
 }
-form#main-box {
-    padding: 25px;
-    border: 1px solid grey;
-    border-radius: 3px;
-    text-align: center;
+form#main-box input {
+    width: 230px;
 }
-section#input-box {
-    padding: 15px;
-    border: 1px solid grey;
+form#main-box input#info {
+    width: 75%;
+    position: relative;
+    top: 5px
+}
+form#main-box button {
+    width: 50%;
+    padding: 3px;
+    background-color: lightblue;
+    border: 1px solid white;
     border-radius: 5px;
-}
-section#button-box {
-    padding-top: 10px;
+    position: relative;
+    top: 15px;
 }
